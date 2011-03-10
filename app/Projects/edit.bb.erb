@@ -1,0 +1,24 @@
+<div id="pageTitle">
+		<h1>Edit <%= @projects.name%></h1>
+</div>
+
+<div id="toolbar">
+    <%= link_to "Back", :action => :show, :id => @projects.object %>
+    <%= link_to "Delete", :action => :delete, :id => @projects.object %>
+</div>
+
+
+<div id="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+    	<input type="hidden" name="id" value="<%= @projects.object %>"/>
+            <table>
+        		
+                    <tr>
+            			<td class="itemLabel">Name: </td>
+              			<td class="itemValue"><input type="text" name="projects[name]" value="<%= @projects.name %>"/></td>
+          		    </tr>
+        		
+            </table>
+            <input type="submit" class="standardButton" value="Update" />
+    </form>
+</div>

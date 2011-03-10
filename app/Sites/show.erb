@@ -1,0 +1,35 @@
+<div class="pageTitle">
+  <h1><%= @site['name'] %></h1>
+</div>
+<h2><%= @site['name'] %></h2>
+<div class="content">
+  <ul>    
+    <li>
+      <div class="itemLabel">ID</div>
+      <div class="itemValue"><%= @site['id'] %></div>
+    </li>
+    <li>
+      <div class="itemLabel">Code</div>
+      <div class="itemValue"><%= @site['code'] %></div>
+    </li>
+    <li>
+      <div class="itemLabel">Latitude</div>
+      <div class="itemValue"><%= @site['lat'] %></div>
+    </li>
+    <li>
+      <div class="itemLabel">Longitude</div>
+      <div class="itemValue"><%= @site['long'] %></div>
+    </li>
+    <li>
+      <a href="<%= url_for(:action => :sensor_values, :query => { :site_id => @site['id']}) %>">
+        <span class="title">See Latest Sensor Readings</span>
+      </a>
+    </li>
+    <li>
+      <a href="<%= url_for(:action => :map_it, :query => { :lat => @site['lat'], :long => @site['long'], :name => @site['name']}) %>">
+        <span class="title">Show on map</span>
+        <span class="disclosure_indicator"></span>
+      </a>
+    </li>
+  </ul>
+</div>

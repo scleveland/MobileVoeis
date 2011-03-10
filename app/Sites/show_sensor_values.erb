@@ -1,0 +1,21 @@
+<div class="pageTitle">
+  <h1>Sensor Readings</h1>
+</div>
+<h2>Sensor Readings</h2>
+<%values = get_sensor_values() %>
+<div class="content">
+  <table>
+    <tr>
+      <th>Variable</th>
+      <th>Measurement</th>
+      <th>DateTime</th>
+    </tr>
+  	<% values.each do |val|%>
+  	  <tr>
+  	    <td><%= val["variable_name"]%></td>
+  	    <td><%= val["data"]["string_value"]%></td>
+  	    <td><%= val["data"]["timestamp"]%></td>
+  	  <tr>
+  	<% end %>
+  </ul>
+</div>

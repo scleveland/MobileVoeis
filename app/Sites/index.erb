@@ -1,0 +1,18 @@
+<div class="pageTitle">
+  <h1>Sites</h1>
+</div>
+<h2>Sites</h2>
+<%sites = get_sites() %>
+<div class="content">
+  <ul id = "list-content">
+    <% if !sites.nil? %>-
+    	<% sites.each do |site|%>
+    	  <li>
+    	    <a href="<%= url_for :controller => :Sites, :action => :show, :query => {:id => site['id'], :lat => site['latitude'], :long => site['longitude'], :code => site['code'], :name => site['name']} %>"><%=site["name"]%></a>
+    	  </li>
+    	<% end %>
+    <% else %>
+     <li> No Sites Exist For This Project </li>
+    <% end %>
+  </ul>
+</div>

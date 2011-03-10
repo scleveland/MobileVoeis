@@ -1,0 +1,22 @@
+sdk: "/Users/seancleveland/.rvm/gems/ruby-1.9.2-p136@mobile/gems/rhodes-2.3.1"
+sdkversion: 2.3.1
+name: MobileVoeis
+version: 1.0
+vendor: rhomobile
+build: debug
+android:
+  apikey: "04mfYKG8i5P8fl60_4vYignpUCFXSz2v-CRUEGA"
+  mapping: yes
+bbver: 4.6
+wmsdk: "Windows Mobile 6 Professional SDK (ARMV4I)"
+applog: rholog.txt
+iphone:
+  configuration: Debug
+  sdk: iphonesimulator4.0
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.MobileVoeis
+  BundleURLScheme: MobileVoeis
+
+extensions: ["json", "another-extension"]

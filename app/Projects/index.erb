@@ -1,0 +1,14 @@
+<div class="pageTitle">
+  <h1>Voeis Projects</h1>
+</div>
+<h2>Voeis Projects</h2>
+<%projects = get_projects() %>
+<div class="content">
+  <ul id = "list-content">
+  	<% projects.each do |project|%>
+  	  <li>
+  	    <a href="<%= url_for :controller => :Sites, :action => :sites, :query => {:project_id => project['id']} %>"><%=project["name"]%></a>
+  	  </li>
+  	<% end %>
+  </ul>
+</div>
